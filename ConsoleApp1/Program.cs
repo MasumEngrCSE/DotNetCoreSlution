@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-var cl = new baseball();
+var cl = new WeightedMeanSolution();
 
-cl.getPoint();
+cl.weightedMeanResult();
