@@ -1,4 +1,4 @@
-﻿class Result
+﻿class WeightedResult
 {
 
     /*
@@ -44,6 +44,6 @@ class WeightedMeanSolution
 
         List<int> weights = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(weightsTemp => Convert.ToInt32(weightsTemp)).ToList();
 
-        Result.weightedMean(vals, weights);
+        WeightedResult.weightedMean(vals, weights);
     }
 }
