@@ -105,89 +105,67 @@
         }
         maxSumRet = prefixSums.Max();
         return maxSumRet;
-        //return maxSum;
     }
 
     public static long maximumSum4(List<long> a, long m)
     {
         //3 3 9 9 5
-        string numbersAsString = string.Join("", a);
-        int ll = a.Count;
-        List<string> la = new List<string>();
 
-        SortedSet<long> dstAr = new SortedSet<long>();
         SortedSet<long> arcal = new SortedSet<long>();
-        for (int i = 0; i < ll; i++)
-        {
-            dstAr.Add(a[i]);
-
-        }
-
-
-        int daL = dstAr.Count;
-
-
+        int daL = a.Count;
+        long mxret = 0;
+        long sumFE = 0;
+        SortedSet<long> prefixSums = new SortedSet<long>();
+        long prefixSum = 0; long maxSum = 0; long maxSumRet = 0;
         for (int i = 0; i < daL; i++)
         {
-            arcal.Add(a[i]);
+
+            //arcal.Add(a[i] % m);
+            //sumFE = a[i] % m;
+            //if (sumFE < mxret)
+            //    mxret = sumFE;
 
             int lj = 0;
-            int j = 0;
-            int fa = i + 1;
-            while ((j + i + 1) <= daL)
-            {
-                //long ta = numbersAsString.Substring(j, i + 1);
+            int j = i + 1;
 
-                
+            //prefixSum = (prefixSum + a[i]) % m;
+            //SortedSet<long> sortedSet = prefixSums.GetViewBetween(0, prefixSum);
+            //long prevSum = sortedSet.Max;
+            //maxSum = Math.Max(maxSum, (prefixSum - prevSum + m) % m);
 
-                long ta =  dstAr.ElementAt(j)+ dstAr.ElementAt(fa);
+            //if (maxSumRet < maxSum)
+            //    maxSumRet = maxSum;
 
-                //la.Add(ta);
-
-                arcal.Add(ta);
-
-                j += 1;
-            }
+            //prefixSums.Add(prefixSum);
 
 
+            //long BaseVal = a[i];
+
+            sumFE = a.Where(p => p >= i).Max(p => (p + a[i]) % m);
+
+            //if (sumFE > mxret)
+            //    mxret = sumFE;
 
 
-
-            //int ast = 0;
-            //while(ast < daL)
+            //while ((j) < daL)
             //{
-            //    ast += 1;
+
+            //    long ta = BaseVal + a[j];
+            //    arcal.Add(ta);
+
+            //    j += 1;
             //}
 
 
-
         }
-
-
-
 
         ////cal sum Mod
-        List<long> lS = new List<long>();
-
-        foreach (long l in arcal)
-        {
-
-            lS.Add(l % m);
-        }
-
-        //long lv = 0;
-        //foreach (string x in la)
+        //List<long> lS = new List<long>();
+        //foreach (long l in arcal)
         //{
-        //    lv = 0;
-        //    foreach (char xi in x)
-        //    {
-        //        lv += Convert.ToInt64(xi.ToString());
-        //    }
-
-        //    lS.Add(lv % m);
+        //    lS.Add(l % m);
         //}
-
-        long mxret = lS.Max();
+        //mxret = prefixSums.Max();
 
 
         return mxret;
@@ -200,24 +178,21 @@ class MaximumSubarraySumSolution
 {
     public void MaximumSubarraySum()
     {
-        List<long> a2 = new List<long> { 3, 3, 9, 9, 5 };
-        //List<long> a2 = new List<long> { 1, 5, 9 };
-        long result2 = MaximumSubarraySumResult.maximumSum4(a2, 7);
+        //List<long> a2 = new List<long> { 3, 3, 9, 9, 5 };
+        ////List<long> a2 = new List<long> { 1, 5, 9 };
+        //long result2 = MaximumSubarraySumResult.maximumSum4(a2, 7);
 
-        return;
+        //return;
 
+        #region Test 2
 
         string filePath = @"E:\Work History\202306\22\MaximumSubarrayDummyData.txt";
-
         try
         {
-            string fileContents = File.ReadAllText(filePath);
-
+            string fileContents = "";
+            fileContents = File.ReadAllText(filePath);
             int n2 = Convert.ToInt32("100000");
-
             long m2 = Convert.ToInt64("10002143548612");
-
-
             var sp = fileContents.TrimEnd().Split(' ');
             List<long> a3 = new List<long>();
             foreach (string xi in sp)
@@ -238,21 +213,7 @@ class MaximumSubarraySumSolution
                 }
             }
 
-
-            //List<long> a2 = fileContents.TrimEnd().Split(' ').ToList().Select(aTemp => Convert.ToInt64(aTemp)).ToList();
-
             long result3 = MaximumSubarraySumResult.maximumSum4(a3, m2);
-
-
-
-            //using (StreamReader reader = new StreamReader(filePath))
-            //{
-            //    string line;
-            //    while ((line = reader.ReadLine()) != null)
-            //    {
-            //        Console.WriteLine(line);
-            //    }
-            //}
         }
         catch (FileNotFoundException)
         {
@@ -262,6 +223,10 @@ class MaximumSubarraySumSolution
         {
             Console.WriteLine("An error occurred while reading the file: " + ex.Message);
         }
+        
+        #endregion
+
+
 
 
         return;
@@ -280,7 +245,7 @@ class MaximumSubarraySumSolution
 
             List<long> a = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(aTemp => Convert.ToInt64(aTemp)).ToList();
 
-            long result = MaximumSubarraySumResult.maximumSum(a, m);
+            long result = MaximumSubarraySumResult.maximumSum4(a, m);
 
             //Console.WriteLine(result);
 
@@ -291,3 +256,6 @@ class MaximumSubarraySumSolution
         //textWriter.Close();
     }
 }
+
+
+////https://www.hackerrank.com/challenges/maximum-subarray-sum/problem?isFullScreen=true&h_r=next-challenge&h_v=zen
