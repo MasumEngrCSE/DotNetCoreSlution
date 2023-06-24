@@ -134,64 +134,31 @@
     {
         //3 3 9 9 5
 
-        SortedSet<long> arcal = new SortedSet<long>();
-        int daL = a.Count;
-        long mxret = 0;
-        long sumFE = 0;
+        int n = a.Count;
+        long prefixSum;
+        long maxSumRet=0;
         SortedSet<long> prefixSums = new SortedSet<long>();
-        long prefixSum = 0; long maxSum = 0; long maxSumRet = 0;
-        for (int i = 0; i < daL; i++)
+
+        for (int i = 0; i < n; i++)
         {
+            prefixSum = 0;
+            int slen = 0;
 
-            //arcal.Add(a[i] % m);
-            //sumFE = a[i] % m;
-            //if (sumFE < mxret)
-            //    mxret = sumFE;
+            for (int j=i;j < n;j++)
+            {
+                prefixSum += a[j];
 
-            int lj = 0;
-            int j = i + 1;
-
-            //prefixSum = (prefixSum + a[i]) % m;
-            //SortedSet<long> sortedSet = prefixSums.GetViewBetween(0, prefixSum);
-            //long prevSum = sortedSet.Max;
-            //maxSum = Math.Max(maxSum, (prefixSum - prevSum + m) % m);
-
-            //if (maxSumRet < maxSum)
-            //    maxSumRet = maxSum;
-
-            //prefixSums.Add(prefixSum);
+                if(maxSumRet< (prefixSum % m))
+                    maxSumRet= prefixSum % m;
 
 
-            //long BaseVal = a[i];
+                //prefixSums.Add(prefixSum % m);
 
-            sumFE = a.Where(p => p >= i).Max(p => (p + a[i]) % m);
-
-            //if (sumFE > mxret)
-            //    mxret = sumFE;
-
-
-            //while ((j) < daL)
-            //{
-
-            //    long ta = BaseVal + a[j];
-            //    arcal.Add(ta);
-
-            //    j += 1;
-            //}
-
-
+                slen += 1;
+            }
         }
-
-        ////cal sum Mod
-        //List<long> lS = new List<long>();
-        //foreach (long l in arcal)
-        //{
-        //    lS.Add(l % m);
-        //}
-        //mxret = prefixSums.Max();
-
-
-        return mxret;
+        //maxSumRet = prefixSums.Max();
+        return maxSumRet;
     }
 
 
@@ -214,7 +181,7 @@ class MaximumSubarraySumSolution
     {
         //List<long> a2 = new List<long> { 3, 3, 9, 9, 5 };
         ////List<long> a2 = new List<long> { 1, 5, 9 };
-        //long result2 = MaximumSubarraySumResult.maximumSum2(a2, 7);
+        //long result2 = MaximumSubarraySumResult.maximumSum4(a2, 7);
 
         //return;
 
@@ -247,7 +214,7 @@ class MaximumSubarraySumSolution
                 }
             }
 
-            long result3 = MaximumSubarraySumResult.maximumSum2(a3, m2);
+            long result3 = MaximumSubarraySumResult.maximumSum4(a3, m2);
         }
         catch (FileNotFoundException)
         {
