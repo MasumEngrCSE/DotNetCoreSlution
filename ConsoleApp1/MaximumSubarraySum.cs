@@ -137,7 +137,6 @@
         int n = a.Count;
         long prefixSum;
         long maxSumRet=0;
-        SortedSet<long> prefixSums = new SortedSet<long>();
 
         for (int i = 0; i < n; i++)
         {
@@ -152,26 +151,12 @@
                     maxSumRet= prefixSum % m;
 
 
-                //prefixSums.Add(prefixSum % m);
-
                 slen += 1;
             }
         }
-        //maxSumRet = prefixSums.Max();
         return maxSumRet;
     }
 
-
-    public static int RangeSum(List<int> numbers, int start, int end)
-    {
-        int sum = 0;
-        for (int i = start; i <= end; i++)
-        {
-            sum += numbers[i];
-        }
-
-        return sum;
-    }
 
 }
 
