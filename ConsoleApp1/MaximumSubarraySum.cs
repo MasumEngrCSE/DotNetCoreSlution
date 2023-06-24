@@ -84,24 +84,47 @@
     public static long maximumSum2(List<long> a, long m)
     {
         int n = a.Count;
-        long maxSum = 0;
+        //long maxSum = 0;
         long prefixSum = 0;
 
         long maxSumRet = 0;
         SortedSet<long> prefixSums = new SortedSet<long>();
-        prefixSums.Add(0);
 
         for (int i = 0; i < n; i++)
         {
-            prefixSum = (prefixSum + a[i]) % m;
-            SortedSet<long> sortedSet = prefixSums.GetViewBetween(0, prefixSum);
-            long prevSum = sortedSet.Max;
-            maxSum = Math.Max(maxSum, (prefixSum - prevSum + m) % m);
+            int lc = i;
+            prefixSum = 0;
+            int slen = 0;
+            
+            while(lc<n)
+            {
 
-            if (maxSumRet < maxSum)
-                maxSumRet = maxSum;
+                prefixSum += a[lc];
+                prefixSums.Add(prefixSum % m);
 
-            prefixSums.Add(prefixSum);
+                lc += 1;
+                slen += 1;
+
+
+                //int ns = 0;
+
+                //while (ns < slen)
+                //{
+                //    prefixSum += a[tl];
+                //    tl += 1;
+                //    ns += 1;
+                //}
+                //prefixSum = a[lc];
+            }
+            //prefixSum = (prefixSum + a[i]) % m;
+            //SortedSet<long> sortedSet = prefixSums.GetViewBetween(0, prefixSum);
+            //long prevSum = sortedSet.Max;
+            //maxSum = Math.Max(maxSum, (prefixSum - prevSum + m) % m);
+
+            //if (maxSumRet < maxSum)
+            //    maxSumRet = maxSum;
+
+            //prefixSums.Add(prefixSum);
         }
         maxSumRet = prefixSums.Max();
         return maxSumRet;
@@ -172,6 +195,17 @@
     }
 
 
+    public static int RangeSum(List<int> numbers, int start, int end)
+    {
+        int sum = 0;
+        for (int i = start; i <= end; i++)
+        {
+            sum += numbers[i];
+        }
+
+        return sum;
+    }
+
 }
 
 class MaximumSubarraySumSolution
@@ -180,7 +214,7 @@ class MaximumSubarraySumSolution
     {
         //List<long> a2 = new List<long> { 3, 3, 9, 9, 5 };
         ////List<long> a2 = new List<long> { 1, 5, 9 };
-        //long result2 = MaximumSubarraySumResult.maximumSum4(a2, 7);
+        //long result2 = MaximumSubarraySumResult.maximumSum2(a2, 7);
 
         //return;
 
@@ -213,7 +247,7 @@ class MaximumSubarraySumSolution
                 }
             }
 
-            long result3 = MaximumSubarraySumResult.maximumSum4(a3, m2);
+            long result3 = MaximumSubarraySumResult.maximumSum2(a3, m2);
         }
         catch (FileNotFoundException)
         {
