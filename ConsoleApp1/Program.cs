@@ -1,9 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-//var cl = new MaximumSubarraySumSolution();
+var cl = new ClsInstanceSolution();
 
-//cl.MaximumSubarraySum();
+cl.PersonAge();
 
 
 
