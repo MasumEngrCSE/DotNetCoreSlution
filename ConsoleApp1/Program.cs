@@ -1,10 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 Console.WriteLine("Hello, World!");
 
-var cl = new ClsInstanceSolution();
+//var cl = new ClsInstanceSolution();
 
-cl.PersonAge();
-
-
-
+//cl.PersonAge();
 
