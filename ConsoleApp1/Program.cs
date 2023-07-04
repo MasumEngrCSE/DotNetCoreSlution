@@ -4,9 +4,10 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 Console.WriteLine("Hello, World!");
 
-var cl = new MSSolution();
-
-cl.smCalculation();
+var cl = new AbsClassSolution();
+cl.call();
+//var cl = new MSSolution();
+//cl.smCalculation();
 
 //Console.WriteLine(((double)30 / (double)8).ToString("0.0000"));
 
