@@ -2,9 +2,9 @@
 using ConsoleApp1;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Hello");
 
-var cl = new propagatingException();
+var cl = new Palindrome();
 cl.initialCall();
 
 //var cl = new MSSolution();
