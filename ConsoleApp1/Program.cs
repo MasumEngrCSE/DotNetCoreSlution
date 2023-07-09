@@ -4,7 +4,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 Console.WriteLine("Hello");
 
-var cl = new BSSolution();
+var cl = new GenericsPrinter();
 cl.initialCall();
 
 //var cl = new MSSolution();
