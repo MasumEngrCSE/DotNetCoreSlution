@@ -1,14 +1,26 @@
-﻿class BinarySearchTree
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+class BinarySearchTree
 {
     internal void initialCall()
     {
         BNode root = null;
-        int T = Int32.Parse(Console.ReadLine());
-        while (T-- > 0)
-        {
-            int data = Int32.Parse(Console.ReadLine());
-            root = insert(root, data);
-        }
+
+        //int T = Int32.Parse(Console.ReadLine());
+        //while (T-- > 0)
+        //{
+        //    int data = Int32.Parse(Console.ReadLine());
+        //    root = insert(root, data);
+        //}
+
+        root = insert(root, 3);
+        root = insert(root, 5);
+        root = insert(root, 4);
+        root = insert(root, 7);
+        root = insert(root, 2);
+        root = insert(root, 1);
+
+
         // levelOrder(root);
         //PrintInorderTraversal(root);
         PrintLevelOrder(root);
