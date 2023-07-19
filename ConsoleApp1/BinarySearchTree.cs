@@ -10,7 +10,8 @@
             root = insert(root, data);
         }
         // levelOrder(root);
-
+        //PrintInorderTraversal(root);
+        PrintLevelOrder(root);
 
         //BNode root = new BNode(30);
         //var n1 = new BNode(15);
@@ -26,9 +27,9 @@
         //n2.left = n4;
         //n2.right = n5;
 
-        var snode = bsearch(root, 41);
-        
-        Console.WriteLine(snode==null?"Not Found":snode.value);
+        //var snode = bsearch(root, 41);
+
+        //Console.WriteLine(snode==null?"Not Found":snode.value);
 
 
     }
@@ -94,6 +95,45 @@
     {
         //Write your code here
     }
+
+    private void PrintInorderTraversal(BNode node)
+    {
+        if (node != null)
+        {
+            PrintInorderTraversal(node.left);
+            Console.WriteLine(node.value);
+            PrintInorderTraversal(node.right);
+        }
+    }
+
+
+    public void PrintLevelOrder(BNode root)
+    {
+        if (root == null)
+        {
+            return;
+        }
+
+        var queue = new Queue<BNode>();
+        queue.Enqueue(root);
+
+        while (queue.Count > 0)
+        {
+            BNode current = queue.Dequeue();
+            Console.WriteLine(current.value);
+
+            if (current.left != null)
+            {
+                queue.Enqueue(current.left);
+            }
+
+            if (current.right != null)
+            {
+                queue.Enqueue(current.right);
+            }
+        }
+    }
+
 }
 
 
