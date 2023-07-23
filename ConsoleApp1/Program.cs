@@ -2,9 +2,9 @@
 using ConsoleApp1;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-Console.WriteLine("Hello");
+//Console.WriteLine("Hello");
 
-var cl = new BinarySearchTree();
+var cl = new RegularExpressions();
 cl.initialCall();
 
 //var cl = new MSSolution();
