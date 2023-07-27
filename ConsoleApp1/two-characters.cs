@@ -12,8 +12,15 @@
     {
         string ds = s;
         bool isEnd = false;
+
+
+
         int i = 0;
         string afaces = "";
+
+        if (s.Length <= 2)
+            isEnd = true;
+
         while (!isEnd)
         {     
             string tys = ds;
@@ -72,6 +79,12 @@
         {
             r = ds.Length;
         }
+        else if(s.Length == 2)
+        {
+            if (s[0] != s[1])
+                r = 2;
+        }
+
 
         return r;
     }
