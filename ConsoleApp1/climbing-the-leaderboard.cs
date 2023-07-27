@@ -15,7 +15,58 @@ class CLResult
      */
 
 
-      public List<int> climbingLeaderboard(List<int> ranked, List<int> player)
+    public List<int> climbingLeaderboard(List<int> ranked, List<int> player)
+    {
+        int[] rankedArray = ranked.ToArray();
+        int mindx = rankedArray.Length + 1;
+
+        List<int> rt = new List<int>();
+
+        foreach (int i in player)
+        {
+            int index = BinarySearch(rankedArray, i);
+            if (index >= 0)
+            {
+                index = rankedArray[index];
+            }
+            else
+            {
+                index = mindx;
+            }
+
+            rt.Add(index);
+        }
+
+        return rt;
+    }
+
+    private static int BinarySearch(int[] array, int value)
+    {
+        int low = 0;
+        int high = array.Length - 1;
+
+        while (low <= high)
+        {
+            int mid = (low + high) / 2;
+
+            if (array[mid] == value)
+            {
+                return mid;
+            }
+            else if (array[mid] < value)
+            {
+                low = mid + 1;
+            }
+            else
+            {
+                high = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    public List<int> climbingLeaderboardCG(List<int> ranked, List<int> player)
     {
         List<int> rt = new List<int>();
 
@@ -109,3 +160,5 @@ class ClimbingLeaderboard
         //textWriter.Close();
     }
 }
+
+//https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem?isFullScreen=true#
