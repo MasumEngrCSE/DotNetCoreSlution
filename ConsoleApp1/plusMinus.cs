@@ -36,9 +36,6 @@ class PMResult
 
         }
 
-
-       // decimal cpd = (decimal)(cp / arr.Count);
-
         Console.WriteLine($"{((cp / arr.Count)).ToString("0.000000")}");
         Console.WriteLine($"{((cn / arr.Count)).ToString("0.000000")}");
         Console.WriteLine($"{((cz / arr.Count)).ToString("0.000000")}");
