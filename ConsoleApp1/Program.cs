@@ -4,7 +4,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 //Console.WriteLine("Hello");
 
-var cl = new plusMinus();
+var cl = new mini_max_sum();
 cl.initialCall();
 
 //var cl = new MSSolution();
