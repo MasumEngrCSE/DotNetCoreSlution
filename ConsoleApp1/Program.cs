@@ -4,7 +4,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 //Console.WriteLine("Hello");
 
-var cl = new running_time_and_complexity();
+var cl = new plusMinus();
 cl.initialCall();
 
 //var cl = new MSSolution();
