@@ -15,10 +15,8 @@ class SMResult
     public  int sockMerchant(int n, List<int> ar)
     {
         ar.Sort();
-
         int pc = 0;
         int pv = 0;
-
         var pairl = new Dictionary<int, int>();
         foreach (var itm in ar)
         {
@@ -38,7 +36,6 @@ class SMResult
             pc += (itm.Value / 2);
         }
 
-        //pc=pairl.Count;
 
         return pc;
 
