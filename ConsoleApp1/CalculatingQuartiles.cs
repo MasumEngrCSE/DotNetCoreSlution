@@ -14,6 +14,7 @@ class QuartilesResult
 
     public static List<int> quartiles(List<int> arr)
     {
+       
         int q1 = 0, q2 = 0, q3 = 0;
         //List<int> arrOrdered = arr.OrderBy(p => p).ToList();
         arr.Sort();

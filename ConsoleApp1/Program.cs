@@ -5,7 +5,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 //Console.WriteLine("Hello");
 
-var cl = new LISolution();
+var cl = new winningCardTuring();
 cl.initialCall();
 
 

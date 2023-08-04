@@ -42,6 +42,7 @@ class CLResult
 
     private static int BinarySearch(int[] array, int value)
     {
+        //array.Length
         int low = 0;
         int high = array.Length - 1;
 
