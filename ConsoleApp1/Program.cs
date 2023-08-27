@@ -10,16 +10,7 @@ Console.WriteLine("Hello");
 //cl.initialCall();
 
 
-string[] plainTextContent = { "This is paragraph 1.", "This is paragraph 2." };
 
-IDocumentBuilder builder = new PlainTextDocumentBuilder();
-builder.BuildHeader();
-builder.BuildContent(plainTextContent);
-builder.BuildFooter();
-
-Document plainTextDocument = builder.GetDocument();
-
-plainTextDocument.ShowContent();
 
 
 
