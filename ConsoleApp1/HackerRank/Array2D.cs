@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ConsoleApp1.HackerRank
 {
     public class Array2D
     {
@@ -39,16 +39,16 @@ namespace ConsoleApp1
             for (int i = 0; i < 16; i++)
             {
 
-                int rn = i/4;
-                
+                int rn = i / 4;
+
                 if (col == 4) col = 0;
 
                 int gc = 1;
                 int gr = 0;
                 int gs = 0;
-                for (int r=rn; r < rn+3; r++)
+                for (int r = rn; r < rn + 3; r++)
                 {
-                    for (int j = col; j < col+3; j++)
+                    for (int j = col; j < col + 3; j++)
                     {
                         if (!(gr == 1 && (gc == 4 || gc == 6)))
                         {
@@ -59,8 +59,8 @@ namespace ConsoleApp1
                     }
                     gr++;
                 }
-                
-                Console.WriteLine(" :"+gs);
+
+                Console.WriteLine(" :" + gs);
 
                 lstAsum.Add(gs);
 

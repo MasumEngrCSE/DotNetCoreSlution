@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ConsoleApp1.HackerRank
 {
     internal class WriteLogToDrive
     {
         internal void initialCall()
         {
-			try
-			{
+            try
+            {
                 WriteTextToLocalDive($"Test Task Schedule");
-			}
-			catch (Exception ex)
-			{
+            }
+            catch (Exception ex)
+            {
 
-				throw ex;
-			}
+                throw ex;
+            }
         }
 
 
