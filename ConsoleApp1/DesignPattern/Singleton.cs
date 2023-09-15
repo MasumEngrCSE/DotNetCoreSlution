@@ -1,9 +1,17 @@
-﻿using javax.management;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region Observer Pattern
+
+/*
+ 
+The Singleton Pattern is a creational pattern that ensures a class has only one instance and provides a global point of access to that instance.
+It's useful when you want to control access to a single resource, such as a configuration manager, a connection pool, or a logging service, to avoid conflicts and ensure there's only one instance.
+
+Here's an example of the Singleton Pattern in C#:
+ 
+ */
+
+#endregion
+
+
 
 namespace ConsoleApp1.DesignPattern
 {
@@ -100,7 +108,7 @@ namespace ConsoleApp1.DesignPattern
 
     /*
      
-        The Singleton Pattern is a widely used design pattern that ensures a class has only one instance and provides a global point of access to that instance. This pattern is important for various reasons:
+    The Singleton Pattern is a widely used design pattern that ensures a class has only one instance and provides a global point of access to that instance. This pattern is important for various reasons:
     Single Point of Control: The Singleton Pattern guarantees that there's only one instance of the class throughout the application's lifecycle. This can be crucial for scenarios where multiple instances could lead to conflicts or inefficient resource usage.
 
 
@@ -152,6 +160,7 @@ namespace ConsoleApp1.DesignPattern
     They persist throughout the lifetime of the application.
     Thread Safety:
     Static members are shared across all threads, so care should be taken to ensure thread safety if necessary.
+
     Singleton:
     Usage:
     A singleton is a design pattern that restricts the instantiation of a class to a single instance and provides a global point of access to that instance.
