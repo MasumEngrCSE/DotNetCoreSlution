@@ -2,11 +2,13 @@
 
 /*
  
-The Facade Pattern is a structural pattern that provides a simplified interface to a complex subsystem or set of interfaces. This pattern is useful when you want to hide the complexities of a system and provide a unified interface for clients.
+The Facade Pattern is a structural pattern that provides a simplified interface to a complex subsystem or set of interfaces.
+This pattern is useful when you want to hide the complexities of a system and provide a unified interface for clients.
 
 Here's an example of the Facade Pattern:
 
-Suppose we're building a computer system, and there are various complex components like the CPU, RAM, and hard drive. We can create a ComputerFacade that provides a simplified interface for turning on and off the computer.
+Suppose we're building a computer system, and there are various complex components like the CPU, RAM, and hard drive.
+We can create a ComputerFacade that provides a simplified interface for turning on and off the computer.
  
  */
 
