@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+///https://gigi.nullneuron.net/gigilabs/using-time-based-one-time-passwords-for-two-factor-authentication/
+
 namespace ConsoleApp1._2fa.totp
 {
     public class totpHelper
