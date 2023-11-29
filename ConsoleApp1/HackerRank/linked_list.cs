@@ -10,10 +10,10 @@ class Node
     }
 
 }
-class Solution
+class linked_listSolution
 {
 
-    public static Node insert(Node head, int data)
+    public  Node insert(Node head, int data)
     {
         //Complete this method
 
@@ -39,7 +39,7 @@ class Solution
 
     }
 
-    public static void display(Node head)
+    public void display(Node head)
     {
         Node start = head;
         while (start != null)
@@ -48,13 +48,15 @@ class Solution
             start = start.next;
         }
     }
-    static void CallMethod()
+    internal void initialCall()
     {
 
         Node head = null;
+        Console.Write("Enter Total Node :");
         int T = Int32.Parse(Console.ReadLine());
         while (T-- > 0)
         {
+            Console.Write($"Enter valu for Node {T} :");
             int data = Int32.Parse(Console.ReadLine());
             head = insert(head, data);
         }

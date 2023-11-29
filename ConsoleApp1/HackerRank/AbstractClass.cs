@@ -15,6 +15,7 @@ abstract class Book
     public abstract void display();
 
 
+    public abstract void colorSet();
 }
 
 //Write MyBook class
@@ -28,10 +29,22 @@ class MyBook : Book
 
     }
 
+    public override void colorSet()
+    {
+        Console.WriteLine("Yellow");
+    }
+
     public override void display()
     {
         Console.WriteLine($"Title: {title}\nAuthor: {author}\nPrice: {price}");
     }
+
+    //public   void colorSet()
+    //{
+    //    Console.WriteLine("Yellow");
+    //}
+
+
 }
 
 
@@ -44,5 +57,6 @@ class AbsClassSolution
         int price = Int32.Parse(Console.ReadLine());
         Book new_novel = new MyBook(title, author, price);
         new_novel.display();
+        new_novel.colorSet();
     }
 }

@@ -6,11 +6,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 Console.WriteLine("Hello");
 
-//var cl = new SumNSeriesSolution();
+//var cl = new linked_listSolution();
 //cl.initialCall();
-
-
-
-
 
 

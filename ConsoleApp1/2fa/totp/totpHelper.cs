@@ -30,6 +30,9 @@ namespace ConsoleApp1._2fa.totp
             var totp = new Totp(secret);
             var code = totp.ComputeTotp();
 
+            //var backupCodes = totp.GenerateBackupCodes();
+
+
             Console.WriteLine(code);
         }
 
@@ -53,6 +56,28 @@ namespace ConsoleApp1._2fa.totp
                 Console.WriteLine(validStr);
                 Console.ResetColor();
             }
+        }
+
+
+        public void GenerateBackupCodesTOTP(string base32Secret)
+        {
+            var backupCodes = GenerateBackupCodes(10);
+        }
+
+
+        public static List<string> GenerateBackupCodes(int count)
+        {
+            var codes = new List<string>();
+            var rng = new Random();
+
+            for (var i = 0; i < count; i++)
+            {
+                var code = new string(Enumerable.Repeat("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ", 6)
+                    .Select(s => s[rng.Next(s.Length)]).ToArray());
+                codes.Add(code);
+            }
+
+            return codes;
         }
 
 
